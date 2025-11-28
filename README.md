@@ -27,3 +27,39 @@ NumConvert Pro is a Progressive Web App (PWA) that provides real-time conversion
 - 🎯 **App-like Experience** - Standalone display mode
 
 ## 🛠️ Project Structure
+
+## 🎨 UI Components
+
+### Main Interface
+- **Converter Card** - Input field and system selector
+- **Result Cards** - Individual cards for each number system
+- **Feature Cards** - Highlighting app capabilities
+- **Install Button** - Fixed position for PWA installation
+
+### Color Scheme
+```css
+--primary: #6366f1;
+--primary-dark: #4f46e5;
+--secondary: #10b981;
+--dark-bg: #0f172a;
+--card-bg: #1e293b;
+--text: #f8fafc;
+const patterns = {
+    binary: /^[01]+$|^0b[01]+$/i,
+    hexadecimal: /^[0-9a-f]+$|^0x[0-9a-f]+$/i,
+    octal: /^[0-7]+$|^0o[0-7]+$/i,
+    decimal: /^\d+$/
+};
+{
+  "name": "Number System Converter",
+  "short_name": "NumConverter",
+  "description": "Convert numbers between binary, decimal, hexadecimal, and octal systems",
+  "start_url": "./",
+  "display": "standalone"
+}
+graph LR
+    A[User Input] --> B[Input Cleaning]
+    B --> C[System Detection]
+    C --> D[Decimal Conversion]
+    D --> E[Target Conversion]
+    E --> F[Display Results]
